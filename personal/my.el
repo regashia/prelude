@@ -4,6 +4,8 @@
 (define-key key-translation-map (kbd "DEL") (kbd "C-h"))
 (define-key key-translation-map (kbd "M-DEL") (kbd "M-h"))
 
+(global-set-key (kbd "<C-backspace>") 'backward-kill-word)
+
 ;; Always follow symlink
 (setq vc-follow-symlinks t)
 
