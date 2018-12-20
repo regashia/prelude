@@ -6,3 +6,24 @@
 
 ;; Always follow symlink
 (setq vc-follow-symlinks t)
+
+;; Use C-q to my keybind prefix
+(global-set-key (kbd "C-q") nil)
+
+;; fzf
+(prelude-require-packages '(fzf))
+(global-set-key (kbd "C-q C-f")
+  (lambda ()
+    (interactive)
+    (setq fzf/executable (concat user-emacs-directory "fzf-files"))
+    (fzf)))
+(global-set-key (kbd "C-q d")
+  (lambda ()
+    (interactive)
+    (setq fzf/executable (concat user-emacs-directory "fzf-directories"))
+    (fzf)))
+(global-set-key (kbd "C-q f")
+  (lambda ()
+    (interactive)
+    (setq fzf/executable (concat user-emacs-directory "fzf-grep"))
+    (fzf)))
